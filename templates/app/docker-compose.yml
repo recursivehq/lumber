@@ -4,10 +4,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        <% if (forestEmail) {%>- forestEmail=<%= forestEmail %><% } %>
+        <% if (forestProjectName) {%>- forestProjectName=<%= forestProjectName %><% } %>
     container_name: <%= appName %>
-    args:
-      <% if (forestEmail) {%>- forestEmail=<%= forestEmail %><% } %>
-      <% if (forestProjectName) {%>- forestProjectName=<%= forestProjectName %><% } %>
     environment:
       - DATABASE_URL=<%= databaseUrl %>
       - AUTH_SECRET=<%= authSecret %>
