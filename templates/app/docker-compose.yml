@@ -11,6 +11,7 @@ services:
     environment:
       - DATABASE_URL=<%= databaseUrl %>
       - AUTH_SECRET=<%= authSecret %>
+      - NODE_ENV=development
       <% if (!port) {%># <% } %>- PORT=<%= port %>
       <% if (!ssl) {%># <% } %>- SSL_DATABASE=true
       <% if (!encrypt) {%># <% } %>- ENCRYPT_DATABASE=true
