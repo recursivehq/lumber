@@ -295,8 +295,8 @@ async function Prompter(program, requests) {
   if (process.env.FOREST_EMAIL) {
     envConfig.forestEmail = process.env.FOREST_EMAIL;
   }
-  if (process.env.FOREST_PROJECT) {
-    envConfig.forestProject = process.env.FOREST_PROJECT;
+  if (process.env.FOREST_PROJECT_NAME) {
+    envConfig.forestProjectName = process.env.FOREST_PROJECT_NAME;
   }
 
   const config = await inquirer.prompt(prompts);
