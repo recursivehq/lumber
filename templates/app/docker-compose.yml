@@ -5,6 +5,9 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: <%= appName %>
+    args:
+      <% if (forestEmail) {%>- forestEmail=<%= forestEmail %><% } %>
+      <% if (forestProjectName) {%>- forestProjectName=<%= forestProjectName %><% } %>
     environment:
       - DATABASE_URL=<%= databaseUrl %>
       - AUTH_SECRET=<%= authSecret %>

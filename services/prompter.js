@@ -291,6 +291,14 @@ async function Prompter(program, requests) {
     });
   }
 
+  // PLUGINS: Parse plugin variables
+  if (process.env.FOREST_EMAIL) {
+    envConfig.forestEmail = process.env.FOREST_EMAIL;
+  }
+  if (process.env.FOREST_PROJECT) {
+    envConfig.forestProject = process.env.FOREST_PROJECT;
+  }
+
   const config = await inquirer.prompt(prompts);
 
   // NOTICE: Remove the dbPassword if there's no password for the DB

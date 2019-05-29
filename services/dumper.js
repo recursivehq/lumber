@@ -188,6 +188,13 @@ function Dumper(config) {
       authSecret,
     };
 
+    if (config.forestEmail) {
+      settings.forestEmail = config.forestEmail;
+    }
+    if (config.forestProjectName) {
+      settings.forestProjectName = config.forestProjectName;
+    }
+
     fs.writeFileSync(`${pathDest}/docker-compose.yml`, template(settings));
   }
 
